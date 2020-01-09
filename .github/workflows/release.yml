@@ -5,20 +5,13 @@ on:
     # branches to consider in the event; optional, defaults to all
     tags:
       - 'v*'
-    # branches:
-    #   - master
 
 jobs:
-  update_release_draft:
+  release:
     runs-on: ubuntu-latest
     steps:
-      - uses: release-drafter/release-drafter@v5
+      - name: Checkout
+        uses: actions/checkout@master
+      - uses: ncipollo/release-action@v1
         with:
-          config-name: release-drafter.yml
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # - name: Checkout
-      #   uses: actions/checkout@master
-      # - uses: ncipollo/release-action@v1
-      #   with:
-      #     token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
