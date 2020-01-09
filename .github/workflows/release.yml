@@ -21,6 +21,7 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: Релиз ${{ github.ref }}
-          body: ${{ github.event.commits[0].message }}
+          # body: ${{ github.event.commits[0].message }}
+          body: Тестовый тест
           draft: false
           prerelease: false
