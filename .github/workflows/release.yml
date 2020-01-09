@@ -5,8 +5,8 @@ on:
     # branches to consider in the event; optional, defaults to all
     # tags:
     #   - 'v*'
-    branched:
-      master
+    branches:
+      - master
 
 jobs:
   update_release_draft:
@@ -14,14 +14,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
-      # - name: Create Release Notes
-      #   uses: docker://decathlon/release-notes-generator-action:2.0.0
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     OUTPUT_FOLDER: temp_release_notes
-      - name: Release
-        uses: softprops/action-gh-release@v1
+      - uses: release-drafter/release-drafter@v5
         with:
-          body_path: release_file.md
+          config-name: release-drafter.yml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Release
+      #   uses: softprops/action-gh-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

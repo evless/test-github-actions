@@ -1,0 +1,9 @@
+name-template: 'v$NEXT_PATCH_VERSION 🌈'	
+tag-template: 'v$NEXT_PATCH_VERSION'	
+replacers:	
+  - search: '/(GINF-\d*)/g'	
+    replace: '[$1](https://jira.csssr.io/browse/$1)'	
+change-template: '- $TITLE (#$NUMBER)'	
+template: |	
+  ## Изменения	
+  $CHANGES 
