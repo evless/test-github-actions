@@ -6,4 +6,4 @@ replacers:
 change-template: '- $TITLE (#$NUMBER)'	
 template: |	
   ## Изменения	
-  $CHANGES 
+  $CHANGES
