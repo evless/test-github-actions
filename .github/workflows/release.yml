@@ -1,4 +1,4 @@
-name: Release Drafter
+name: Release
 
 on:
   push:
@@ -11,13 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-      - uses: release-drafter/release-drafter@v5
-        with:
-          config-name: release-drafter.yml
+        uses: actions/checkout@master
+      - name: Create Release Notes
+        uses: docker://decathlon/release-notes-generator-action:2.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OUTPUT_FOLDER: temp_release_notes
+          USE_MILESTONE_TITLE: "true"
       - name: Release
         uses: softprops/action-gh-release@v1
+        with:
+          body_path: release_file.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
