@@ -3,8 +3,10 @@ name: Release
 on:
   push:
     # branches to consider in the event; optional, defaults to all
-    tags:
-      - 'v*'
+    # tags:
+    #   - 'v*'
+    branched:
+      master
 
 jobs:
   update_release_draft:
@@ -17,7 +19,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OUTPUT_FOLDER: temp_release_notes
-          USE_MILESTONE_TITLE: "true"
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
