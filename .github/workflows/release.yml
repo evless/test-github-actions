@@ -3,15 +3,17 @@ name: Release
 on:
   push:
     # branches to consider in the event; optional, defaults to all
-    tags:
-      - 'v*'
+    # tags:
+    #   - 'v*'
+    branches:
+      - master
 
 jobs:
   update_release_draft:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
+      # - name: Checkout
+      #   uses: actions/checkout@master
       - uses: release-drafter/release-drafter@v5
         with:
           config-name: release-drafter.yml

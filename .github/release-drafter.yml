@@ -1,4 +1,4 @@
-name-template: 'v$NEXT_PATCH_VERSION'	
+name-template: 'v$NEXT_PATCH_VERSION 🌈'	
 tag-template: 'v$NEXT_PATCH_VERSION'	
 replacers:	
   - search: '/(GINF-\d*)/g'	
@@ -6,4 +6,4 @@ replacers:
 change-template: '- $TITLE (#$NUMBER)'	
 template: |	
   ## Изменения	
-  $CHANGES
+  $CHANGES 
