@@ -7,7 +7,7 @@ module.exports = {
     "groupBy": false,
     template: {
         issue: ({ text, url, name }) => (
-            `- ${name.replace(/(GINF-\d*)/, '[$1](https://jira.csssr.io/browse/$1)')} [${text}](${url})`
+            `- ${name} [${text}](${url})`
         ),
         changelogTitle: '# Изменения\n\n',
         release: '{{body}}'

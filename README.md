@@ -1,3 +1,2 @@
-# test-github-actions
+# Настройка авторелиза в github через github actions
 
-[test](test.ru)
