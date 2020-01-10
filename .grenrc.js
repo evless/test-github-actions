@@ -1,13 +1,14 @@
 module.exports = {
-    "dataSource": "commits",
+    "dataSource": 'prs',
     "prefix": "",
-    "includeMessages": "commits",
-    "changelogFilename": "CHANGELOG.md",
+    "includeMessages": 'commits',
+    "changelogFilename": 'CHANGELOG.md',
     "onlyMilestones": false,
     "groupBy": false,
     template: {
-        commit: ({ message, url }) => `- [${message}](${url})`,
-        issue: "- {{labels}} {{name}} [{{text}}]({{url}})",
-        changelogTitle: "# Изменения\n\n",
+        issue: ({ text, url, name }) => (
+            `- ${name.replace(/(GINF-\d*)/, '[$1](https://jira.csssr.io/browse/$1)')} ([${text}](${url}))`
+        ),
+        changelogTitle: '# Изменения\n\n',
     }
 }
