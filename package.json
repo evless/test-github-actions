@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/evless/test-github-actions/issues"
   },
-  "homepage": "https://github.com/evless/test-github-actions#readme"
+  "homepage": "https://github.com/evless/test-github-actions#readme",
+  "dependencies": {
+    "github-release-notes": "^0.17.1"
+  }
 }
