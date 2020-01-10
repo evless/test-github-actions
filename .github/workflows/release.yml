@@ -14,7 +14,7 @@ jobs:
     - name: install github-release-notes and generate changelog
       run: |
         npm install github-release-notes
-        ./node_modules/.bin/gren changelog --generate --override
+        ./node_modules/.bin/gren changelog --generate --override --token=${{ secrets.GITHUB_TOKEN }}
       env:
         CI: true
     - uses: ncipollo/release-action@v1
