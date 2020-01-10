@@ -11,13 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - name: install github-release-notes and generate changelog
+      run: |
+        npm install github-release-notes
+        ./node_modules/.bin/gren changelog --generate --override
+      env:
+        CI: true
     - uses: ncipollo/release-action@v1
       with:
-        draft: true
-        body: |
-          ### Тестовый тестович
-        token: ${{ secrets.GITHUB_TOKEN }}
-    - uses: ncipollo/release-action@v1
-      with:
+        bodyFile: 'CHANGELOG.md'
         token: ${{ secrets.GITHUB_TOKEN }}
 
