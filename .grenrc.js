@@ -10,5 +10,6 @@ module.exports = {
             `- ${name.replace(/(GINF-\d*)/, '[$1](https://jira.csssr.io/browse/$1)')} [${text}](${url})`
         ),
         changelogTitle: '# Изменения\n\n',
+        release: '{{body}}'
     }
 }
