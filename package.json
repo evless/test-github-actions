@@ -8,7 +8,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "preversion": "gren changelog --token=cbe7286055525c4e3468720859772393e15d19b8",
+    "postpublish": "gren changelog --generate --token=1e17d8201493ffd8e5f318607e0216d8fee8ee7e",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
