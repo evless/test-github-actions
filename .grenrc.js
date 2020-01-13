@@ -10,6 +10,5 @@ module.exports = {
             `- ${name} [${text}](${url})`
         ),
         changelogTitle: '# Изменения\n\n',
-        release: '{{body}}'
     }
 }
