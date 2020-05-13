@@ -16,6 +16,7 @@ jobs:
         echo TEMP_CHANGELOG.md
     - name: Install github-release-notes and generate changelog
       run: |
+        echo $(node -p -e "require('./package.json').version")
         npx github-release-notes release --tags=v$(node -p -e "require('./package.json').version") --token=${{ secrets.GITHUB_TOKEN }}
       env:
         CI: true
