@@ -14,6 +14,9 @@ jobs:
     - name: Debug
       run:
         echo TEMP_CHANGELOG.md
+    # - name: Install github-release-notes and generate changelog
+    #   run: |
+    #     npx github-release-notes changelog --generate --override --token=${{ secrets.GITHUB_TOKEN }} --changelog-filename=TEMP_CHANGELOG.md
     - name: Install github-release-notes and generate changelog
       run: |
         ./node_modules/.bin/gren changelog --generate --override --token=${{ secrets.GITHUB_TOKEN }} --changelog-filename=TEMP_CHANGELOG.md
