@@ -1,0 +1,1 @@
+gcm && ggpull && npm version patch && ggpush --follow-tags
