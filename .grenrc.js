@@ -4,7 +4,7 @@
  */
 module.exports = {
     dataSource: 'prs',
-    prefix: "",
+    prefix: '',
     includeMessages: 'commits',
     changelogFilename: 'CHANGELOG.md',
     onlyMilestones: false,
@@ -17,4 +17,3 @@ module.exports = {
         release: '\n\n{{body}}'
     }
   }
-  ///
