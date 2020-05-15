@@ -16,10 +16,7 @@ jobs:
         echo TEMP_CHANGELOG.md
     - name: Install github-release-notes and generate changelog
       run: |
-        curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -i https://api.github.com/repos/evless/test-github-actions/tags
-        echo $(node -p -e "require('./package.json').version")
-        npm install github-release-notes@0.17.1
-        ./node_modules/.bin/gren changelog --generate --override --token=${{ secrets.GITHUB_TOKEN }} --changelog-filename=TEMP_CHANGELOG.md -B
+        npx github-release-notes@0.17.1 changelog --generate --override --token=${{ secrets.GITHUB_TOKEN }} --changelog-filename=TEMP_CHANGELOG.md -B
     - name: Create and publish realese
       uses: ncipollo/release-action@v1
       with:
