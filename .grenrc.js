@@ -17,4 +17,3 @@ module.exports = {
         release: '\n\n{{body}}'
     }
   }
-///
